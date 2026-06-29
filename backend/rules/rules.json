@@ -1,0 +1,54 @@
+{
+    "rules": [
+        {
+            "id": "BR001",
+            "category": "business",
+            "name": "Budget Approved",
+            "condition": "budget approved",
+            "score": 15,
+            "enabled": true,
+            "priority": 1,
+            "description": "Customer already has budget approval."
+        },
+        {
+            "id": "BR002",
+            "category": "business",
+            "name": "Executive Engagement",
+            "condition": "cto",
+            "score": 10,
+            "enabled": true,
+            "priority": 1,
+            "description": "Executive stakeholder involved."
+        },
+        {
+            "id": "BR003",
+            "category": "business",
+            "name": "Technical Evaluation",
+            "condition": "technical demonstration",
+            "score": 5,
+            "enabled": true,
+            "priority": 2,
+            "description": "Customer entered technical evaluation."
+        },
+        {
+            "id": "RR001",
+            "category": "risk",
+            "name": "Legal Concern",
+            "condition": "legal issue",
+            "score": -20,
+            "enabled": true,
+            "priority": 1,
+            "description": "Legal issue detected."
+        },
+        {
+            "id": "CR001",
+            "category": "compliance",
+            "name": "Compliance Review",
+            "condition": "compliance",
+            "score": -10,
+            "enabled": true,
+            "priority": 1,
+            "description": "Compliance review pending."
+        }
+    ]
+}
