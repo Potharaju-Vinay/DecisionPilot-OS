@@ -50,21 +50,21 @@ DecisionPilot OS follows a planner-driven multi-agent architecture where a Plann
 
 # Technology Stack
 
-### Backend
+## Backend
 
 * Python
 * FastAPI
 * LangGraph
 * Google Gemini 2.5 Flash
 
-### Frontend
+## Frontend
 
 * React.js
 * Vite
 * Tailwind CSS
 * React Flow
 
-### AI Components
+## AI Components
 
 * Multi-Agent Architecture
 * Planner Agent
@@ -73,7 +73,7 @@ DecisionPilot OS follows a planner-driven multi-agent architecture where a Plann
 * Knowledge Graph
 * Memory Management
 
-### Database & Storage
+## Database & Storage
 
 * ChromaDB
 * Vector Embeddings
@@ -96,8 +96,8 @@ The platform consists of specialized AI agents including:
 * Graph Agent
 * Analytics Agent
 * Memory Agent
-* Scenario Agent (Future Capability)
-* Learning Agent (Future Capability)
+* Scenario Agent *(Future Capability)*
+* Learning Agent *(Future Capability)*
 
 ---
 
@@ -110,19 +110,79 @@ DecisionPilot-OS
 ├── frontend/
 ├── docs/
 ├── data/
+│   └── samples/
 ├── requirements.txt
 └── README.md
 ```
 
 ---
 
+# Prerequisites
+
+Before running the project, install the following software:
+
+* Python 3.11 or later
+* Node.js 18 or later
+* npm
+* Git
+
+---
+
 # Installation
 
-## Backend
+## Clone the Repository
+
+```bash
+git clone https://github.com/Potharaju-Vinay/DecisionPilot-OS.git
+
+cd DecisionPilot-OS
+```
+
+---
+
+## Backend Setup
+
+Create a Python virtual environment.
+
+```bash
+python -m venv venv
+```
+
+### Windows
+
+```bash
+venv\Scripts\activate
+```
+
+### Linux / macOS
+
+```bash
+source venv/bin/activate
+```
+
+Install the required dependencies.
+
+```bash
+pip install -r requirements.txt
+```
+
+---
+
+# Environment Variables
+
+Create a `.env` file in the project root.
+
+```env
+GOOGLE_API_KEY=YOUR_GEMINI_API_KEY
+```
+
+---
+
+## Run the Backend
 
 ```bash
 cd backend
-pip install -r ../requirements.txt
+
 uvicorn main:app --reload
 ```
 
@@ -132,13 +192,23 @@ Backend URL
 http://127.0.0.1:8000
 ```
 
+Swagger API Documentation
+
+```
+http://127.0.0.1:8000/docs
+```
+
 ---
 
-## Frontend
+## Frontend Setup
+
+Open another terminal.
 
 ```bash
 cd frontend
+
 npm install
+
 npm run dev
 ```
 
@@ -152,79 +222,105 @@ http://localhost:5173
 
 # Platform Workflow
 
+```
 Document Upload
-
-↓
-
+        │
+        ▼
 Knowledge Extraction
-
-↓
-
+        │
+        ▼
 Customer Discovery
-
-↓
-
+        │
+        ▼
 ICP Analysis
-
-↓
-
+        │
+        ▼
 Risk Assessment
-
-↓
-
+        │
+        ▼
 Decision Intelligence
-
-↓
-
+        │
+        ▼
 Recommendation Generation
-
-↓
-
+        │
+        ▼
 Explainability
-
-↓
-
+        │
+        ▼
 Knowledge Graph
-
-↓
-
+        │
+        ▼
 Analytics Dashboard
-
-↓
-
+        │
+        ▼
 Human-in-the-Loop Review
-
-↓
-
+        │
+        ▼
 Final Business Decision
+```
+
+---
+
+# Sample Documents
+
+Sample enterprise proposal documents are provided inside:
+
+```text
+data/samples/
+```
+
+These documents can be uploaded directly into the application to evaluate the complete workflow without preparing your own input files.
 
 ---
 
 # Human-in-the-Loop
 
-DecisionPilot OS supports human oversight before recommendations are accepted.
+DecisionPilot OS supports human oversight before AI recommendations are accepted.
 
-Available actions include:
+Available actions:
 
-* Approve
-* Reject
-* Manual Review
+* ✅ Approve
+* ❌ Reject
+* 🟡 Manual Review
 
-This ensures that final enterprise decisions remain under human control while leveraging AI-generated intelligence.
+This ensures enterprise decisions always remain under human control while leveraging AI-powered recommendations.
 
 ---
 
 # Explainable AI
 
-Every recommendation is accompanied by:
+Every recommendation includes:
 
 * Supporting Evidence
-* Risk Analysis
-* Confidence Score
 * Business Reasoning
+* Confidence Score
+* Risk Analysis
 * Decision Explanation
 
-This improves transparency and trust in enterprise decision-making.
+This improves transparency, trust, and decision confidence for business users.
+
+---
+
+# Troubleshooting
+
+## Gemini API Quota
+
+DecisionPilot OS uses the Google Gemini API for AI-powered document understanding and business reasoning.
+
+If execution fails because of quota limits or no AI response is returned, the free-tier Gemini API quota has likely been exhausted.
+
+To continue using the platform:
+
+1. Generate a new Google Gemini API Key.
+2. Replace the existing key inside the `.env` file.
+
+```env
+GOOGLE_API_KEY=YOUR_NEW_API_KEY
+```
+
+3. Restart the FastAPI backend.
+
+The application will resume normal operation after updating the API key.
 
 ---
 
@@ -243,6 +339,8 @@ Complete project documentation is available in the **docs/** directory.
 * Cloud Deployment
 * Role-Based Access Control
 * Real-Time CRM Integration
+* CRM & ERP Connectors
+* Enterprise SSO Support
 
 ---
 
@@ -256,7 +354,7 @@ Developed as a submission for the **XLVentures.AI Hackathon 2026**.
 
 **Potharaju Vinay**
 
-B.Tech Cyber Security
+B.Tech – Cyber Security
 
 VNR Vignana Jyothi Institute of Engineering & Technology
 
@@ -264,4 +362,4 @@ VNR Vignana Jyothi Institute of Engineering & Technology
 
 # License
 
-This project is developed for educational and hackathon purposes.
+This project is developed for educational, research, and hackathon purposes only.
