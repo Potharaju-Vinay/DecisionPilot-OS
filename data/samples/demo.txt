@@ -1,7 +1,0 @@
-Customer: ABC Technologies
-
-Meeting Date: 26 June 2026
-
-The customer is interested in our AI platform.
-Budget is approved.
-The CTO requested a technical demonstration next week.
