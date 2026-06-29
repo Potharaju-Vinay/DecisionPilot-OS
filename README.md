@@ -2,9 +2,35 @@
 
 ## Intelligent Next Best Action Platform
 
-DecisionPilot OS is a reusable **Agentic Decision Intelligence Platform** that transforms enterprise customer interactions and organizational knowledge into intelligent, explainable, and actionable Next Best Action recommendations.
+DecisionPilot OS is an AI-powered **Agentic Decision Intelligence Platform** that transforms enterprise customer interactions and organizational knowledge into intelligent, explainable, and actionable **Next Best Action** recommendations.
 
-The platform combines dynamic planner-based agent orchestration, enterprise knowledge retrieval, risk assessment, explainable AI, knowledge graphs, memory, and human-in-the-loop review to assist business users in making confident and data-driven decisions.
+The platform combines dynamic planner-based agent orchestration, enterprise knowledge retrieval, risk assessment, explainable AI, knowledge graphs, memory, and human-in-the-loop review to help organizations make confident, transparent, and data-driven business decisions.
+
+---
+
+# Team Details
+
+**Team Name:** Kanyarashi
+
+**Team Members:**
+
+* **Potharaju Vinay**
+
+---
+
+# Project Overview
+
+DecisionPilot OS analyzes enterprise proposal documents and business information using multiple AI agents. It evaluates customer qualification, business opportunities, compliance risks, and organizational readiness before generating an explainable business decision along with actionable recommendations.
+
+The platform is designed to reduce manual effort, improve decision quality, and increase transparency in enterprise sales and strategic decision-making.
+
+---
+
+# GitHub Repository
+
+Repository Link:
+
+**https://github.com/Potharaju-Vinay/DecisionPilot-OS/tree/main**
 
 ---
 
@@ -29,9 +55,9 @@ The platform combines dynamic planner-based agent orchestration, enterprise know
 
 # System Architecture
 
-DecisionPilot OS follows a planner-driven multi-agent architecture where a Planner Agent dynamically orchestrates specialized agents based on the business context.
+DecisionPilot OS follows a planner-driven multi-agent architecture where a Planner Agent dynamically orchestrates specialized AI agents based on business context.
 
-### Workflow
+## Workflow
 
 1. Document Upload
 2. Knowledge Extraction
@@ -77,27 +103,30 @@ DecisionPilot OS follows a planner-driven multi-agent architecture where a Plann
 
 * ChromaDB
 * Vector Embeddings
-* Local Database
+* SQLite
 
 ---
 
 # Multi-Agent Architecture
 
-The platform consists of specialized AI agents including:
+The platform consists of the following AI agents:
 
 * Planner Agent
 * Knowledge Agent
 * Customer Discovery Agent
-* ICP Agent
-* Risk Agent
-* Decision Agent
+* ICP Qualification Agent
+* Risk Assessment Agent
+* Decision Intelligence Agent
 * Recommendation Agent
 * Explainability Agent
 * Graph Agent
 * Analytics Agent
 * Memory Agent
-* Scenario Agent *(Future Capability)*
-* Learning Agent *(Future Capability)*
+
+### Future Agents
+
+* Scenario Agent
+* Learning Agent
 
 ---
 
@@ -119,10 +148,10 @@ DecisionPilot-OS
 
 # Prerequisites
 
-Before running the project, install the following software:
+Install the following before running the project:
 
-* Python 3.11 or later
-* Node.js 18 or later
+* Python 3.11+
+* Node.js 18+
 * npm
 * Git
 
@@ -130,7 +159,7 @@ Before running the project, install the following software:
 
 # Installation
 
-## Clone the Repository
+## Clone Repository
 
 ```bash
 git clone https://github.com/Potharaju-Vinay/DecisionPilot-OS.git
@@ -140,9 +169,9 @@ cd DecisionPilot-OS
 
 ---
 
-## Backend Setup
+# Backend Setup
 
-Create a Python virtual environment.
+Create Virtual Environment
 
 ```bash
 python -m venv venv
@@ -154,13 +183,13 @@ python -m venv venv
 venv\Scripts\activate
 ```
 
-### Linux / macOS
+### Linux/macOS
 
 ```bash
 source venv/bin/activate
 ```
 
-Install the required dependencies.
+Install Dependencies
 
 ```bash
 pip install -r requirements.txt
@@ -170,7 +199,7 @@ pip install -r requirements.txt
 
 # Environment Variables
 
-Create a `.env` file in the project root.
+Create a `.env` file.
 
 ```env
 GOOGLE_API_KEY=YOUR_GEMINI_API_KEY
@@ -178,7 +207,7 @@ GOOGLE_API_KEY=YOUR_GEMINI_API_KEY
 
 ---
 
-## Run the Backend
+# Run Backend
 
 ```bash
 cd backend
@@ -192,7 +221,7 @@ Backend URL
 http://127.0.0.1:8000
 ```
 
-Swagger API Documentation
+Swagger Documentation
 
 ```
 http://127.0.0.1:8000/docs
@@ -200,7 +229,7 @@ http://127.0.0.1:8000/docs
 
 ---
 
-## Frontend Setup
+# Frontend Setup
 
 Open another terminal.
 
@@ -222,7 +251,7 @@ http://localhost:5173
 
 # Platform Workflow
 
-```
+```text
 Document Upload
         │
         ▼
@@ -250,10 +279,13 @@ Explainability
 Knowledge Graph
         │
         ▼
-Analytics Dashboard
+Enterprise Analytics
         │
         ▼
-Human-in-the-Loop Review
+Memory Update
+        │
+        ▼
+Human Review
         │
         ▼
 Final Business Decision
@@ -263,19 +295,19 @@ Final Business Decision
 
 # Sample Documents
 
-Sample enterprise proposal documents are provided inside:
+Sample enterprise proposal documents are available in:
 
 ```text
 data/samples/
 ```
 
-These documents can be uploaded directly into the application to evaluate the complete workflow without preparing your own input files.
+Upload these documents to evaluate the complete workflow.
 
 ---
 
 # Human-in-the-Loop
 
-DecisionPilot OS supports human oversight before AI recommendations are accepted.
+DecisionPilot OS keeps humans involved before any final recommendation is accepted.
 
 Available actions:
 
@@ -283,21 +315,22 @@ Available actions:
 * ❌ Reject
 * 🟡 Manual Review
 
-This ensures enterprise decisions always remain under human control while leveraging AI-powered recommendations.
+This ensures enterprise decisions remain transparent and under human control.
 
 ---
 
 # Explainable AI
 
-Every recommendation includes:
+Each recommendation includes:
 
 * Supporting Evidence
 * Business Reasoning
 * Confidence Score
 * Risk Analysis
 * Decision Explanation
+* Recommended Next Best Actions
 
-This improves transparency, trust, and decision confidence for business users.
+This enables users to understand **why** a decision was generated.
 
 ---
 
@@ -305,14 +338,12 @@ This improves transparency, trust, and decision confidence for business users.
 
 ## Gemini API Quota
 
-DecisionPilot OS uses the Google Gemini API for AI-powered document understanding and business reasoning.
+If AI responses stop working, the Gemini free-tier quota may have been exhausted.
 
-If execution fails because of quota limits or no AI response is returned, the free-tier Gemini API quota has likely been exhausted.
+Steps:
 
-To continue using the platform:
-
-1. Generate a new Google Gemini API Key.
-2. Replace the existing key inside the `.env` file.
+1. Generate a new Gemini API Key.
+2. Replace the key inside the `.env` file.
 
 ```env
 GOOGLE_API_KEY=YOUR_NEW_API_KEY
@@ -320,33 +351,32 @@ GOOGLE_API_KEY=YOUR_NEW_API_KEY
 
 3. Restart the FastAPI backend.
 
-The application will resume normal operation after updating the API key.
-
 ---
 
 # Documentation
 
-Complete project documentation is available in the **docs/** directory.
+Additional project documentation is available inside the **docs/** directory.
 
 ---
 
 # Future Enhancements
 
-* Advanced Scenario Simulation
-* Continuous Learning Intelligence
-* Multi-Organization Memory
+* Scenario Simulation
+* Continuous Learning
 * Enterprise Authentication
 * Cloud Deployment
 * Role-Based Access Control
-* Real-Time CRM Integration
-* CRM & ERP Connectors
-* Enterprise SSO Support
+* CRM Integration
+* ERP Integration
+* Enterprise SSO
+* Multi-Organization Memory
+* Real-Time Collaboration
 
 ---
 
-# Hackathon
+# Hackathon Submission
 
-Developed as a submission for the **XLVentures.AI Hackathon 2026**.
+This project was developed as part of the **XLVentures.AI Hackathon 2026**.
 
 ---
 
